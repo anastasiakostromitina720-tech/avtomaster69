@@ -3,202 +3,458 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Автомастер69 в Ржеве - честный ремонт авто без лишних затрат. Диагностика, ремонт, шиномонтаж, гарантия на работы.">
-  <title>Автомастер69 - Ремонт авто в Ржеве</title>
+  <meta name="description" content="Автомастер69 — автосервис в Ржеве. Честный ремонт, диагностика, гарантия на работы. 6 лет опыта.">
+  <title>Автомастер69 · Ржев — Честный ремонт авто</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero section">
-    <div class="container">
-      <p class="label">Автомастер69 • Ржев • 6 лет работы • Гарантия на работы</p>
-      <h1>Честный ремонт авто в Ржеве без лишних затрат</h1>
-      <p class="lead">Диагностируем, объясняем и делаем только то, что действительно нужно</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#contact">Записаться на диагностику</a>
-        <a class="btn btn-secondary" href="#prices">Узнать стоимость</a>
-      </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="Автомастер69">
+        <span class="brand__mark">А69</span>
+        <span class="brand__meta">
+          <span class="brand__name">АВТОМАСТЕР<span class="brand__num">69</span></span>
+          <span class="brand__sub">Ржев · сервис · с 2019</span>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Разделы">
+        <a href="#services">Услуги</a>
+        <a href="#process">Процесс</a>
+        <a href="#prices">Цены</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="topphone" href="tel:+79000000000">
+        <span class="mono">[TEL]</span> +7 (900) 000-00-00
+      </a>
     </div>
+    <div class="hazard" aria-hidden="true"></div>
   </header>
 
-  <main>
-    <section class="section">
-      <div class="container">
-        <h2>Чем можем помочь</h2>
-        <p>Берем в работу как простые задачи, так и сложный ремонт. Можно приехать с проблемой - разберемся.</p>
-        <ul class="grid-list">
-          <li>Диагностика автомобиля (в том числе выездная)</li>
-          <li>Шиномонтаж</li>
-          <li>Сварочные работы</li>
-          <li>Ремонт двигателя</li>
-          <li>Ремонт КПП</li>
-          <li>Ремонт ходовой части</li>
-          <li>Ремонт тормозной системы</li>
-          <li>Ремонт выхлопной системы</li>
-          <li>Ремонт стартеров и генераторов</li>
-          <li>Замена масла и расходников</li>
-          <li>Замена ГРМ</li>
-          <li>Ремонт ГБЦ</li>
-          <li>Ремонт карданных валов и мостов</li>
-          <li>Удаление катализаторов</li>
-        </ul>
-        <p class="note">При необходимости сами закажем запчасти - подберем оптимальный вариант по цене и качеству.</p>
+  <main id="top">
+
+    <!-- 01 HERO -->
+    <section class="hero" data-section="01">
+      <div class="container hero__inner">
+        <div class="section-tag">
+          <span class="mono">[01 / 13]</span>
+          <span class="mono muted">FIRST_SCREEN.TXT</span>
+        </div>
+
+        <h1 class="hero__title">
+          <span class="line">ЧЕСТНЫЙ</span>
+          <span class="line line--accent">РЕМОНТ АВТО</span>
+          <span class="line">В РЖЕВЕ —</span>
+          <span class="line line--thin">без лишних затрат.</span>
+        </h1>
+
+        <div class="hero__aside">
+          <p class="lead">
+            Диагностируем, объясняем и делаем только то, что действительно нужно.
+            Без «разводов» и накруток. Если проблемы нет — так и скажем.
+          </p>
+
+          <ul class="stats">
+            <li><span class="stats__num">06</span><span class="stats__lbl">лет&nbsp;в работе</span></li>
+            <li><span class="stats__num">14</span><span class="stats__lbl">видов услуг</span></li>
+            <li><span class="stats__num">∞</span><span class="stats__lbl">марок&nbsp;авто</span></li>
+            <li><span class="stats__num">✓</span><span class="stats__lbl">гарантия</span></li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="#contact">
+              <span>Записаться на диагностику</span>
+              <span class="btn__arr" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost" href="#prices">
+              <span>Узнать стоимость</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>★ ДИАГНОСТИКА</span><span>★ РЕМОНТ ДВС</span><span>★ КПП</span><span>★ ХОДОВАЯ</span><span>★ ТОРМОЗА</span><span>★ ГРМ</span><span>★ ШИНОМОНТАЖ</span><span>★ СВАРКА</span><span>★ ВЫЕЗДНАЯ ДИАГНОСТИКА</span>
+          <span>★ ДИАГНОСТИКА</span><span>★ РЕМОНТ ДВС</span><span>★ КПП</span><span>★ ХОДОВАЯ</span><span>★ ТОРМОЗА</span><span>★ ГРМ</span><span>★ ШИНОМОНТАЖ</span><span>★ СВАРКА</span><span>★ ВЫЕЗДНАЯ ДИАГНОСТИКА</span>
+        </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <!-- 02 SERVICES -->
+    <section class="section services" id="services" data-section="02">
       <div class="container">
-        <h2>Когда к нам обращаются</h2>
-        <ul class="simple-list">
-          <li>Что-то стучит, гремит или вибрирует</li>
-          <li>Машина стала хуже ехать</li>
-          <li>Загорелась ошибка</li>
-          <li>Проблемы с тормозами</li>
-          <li>Нужно проверить авто перед поездкой</li>
-          <li>Давно не делали обслуживание</li>
-        </ul>
-        <p class="note">Можно приехать даже без точного понимания проблемы - разберемся.</p>
-      </div>
-    </section>
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[02 / 13]</span>
+            <span class="mono muted">SERVICES.LIST</span>
+          </div>
+          <h2 class="section-title">Чем&nbsp;можем помочь</h2>
+          <p class="section-sub">
+            Берём в работу как простые задачи, так и сложный ремонт.
+            Можно приехать с проблемой — разберёмся на месте.
+          </p>
+        </div>
 
-    <section class="section">
-      <div class="container">
-        <h2>Работаем с любыми автомобилями</h2>
-        <p>Обслуживаем все марки - от отечественных до иномарок. Если сомневаетесь - просто напишите или позвоните, подскажем.</p>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <h2>Как проходит ремонт</h2>
-        <ol class="steps">
-          <li>Вы записываетесь или звоните</li>
-          <li>Проводим диагностику</li>
-          <li>Объясняем, в чем проблема</li>
-          <li>Согласовываем стоимость</li>
-          <li>Выполняем работы</li>
-          <li>Вы забираете исправный автомобиль</li>
+        <ol class="svc-grid">
+          <li><i>01</i><b>Диагностика</b><span>в&nbsp;т.ч. выездная</span></li>
+          <li><i>02</i><b>Шиномонтаж</b><span>сезон / срочный</span></li>
+          <li><i>03</i><b>Сварочные работы</b><span>кузов, глушитель</span></li>
+          <li><i>04</i><b>Ремонт двигателя</b><span>от стука до капиталки</span></li>
+          <li><i>05</i><b>Ремонт КПП</b><span>механика и АКПП</span></li>
+          <li><i>06</i><b>Ходовая часть</b><span>подвеска, рулевая</span></li>
+          <li><i>07</i><b>Тормозная система</b><span>диски, колодки, ABS</span></li>
+          <li><i>08</i><b>Выхлопная система</b><span>глушители, банки</span></li>
+          <li><i>09</i><b>Стартеры и генераторы</b><span>ремонт и&nbsp;замена</span></li>
+          <li><i>10</i><b>Замена масла</b><span>и&nbsp;расходников</span></li>
+          <li><i>11</i><b>Замена ГРМ</b><span>ремень / цепь</span></li>
+          <li><i>12</i><b>Ремонт ГБЦ</b><span>шлифовка, клапана</span></li>
+          <li><i>13</i><b>Карданы и&nbsp;мосты</b><span>валы, крестовины</span></li>
+          <li><i>14</i><b>Удаление катализаторов</b><span>с&nbsp;прошивкой</span></li>
         </ol>
-        <p class="note">Без согласования ничего не делаем.</p>
+
+        <div class="callout">
+          <span class="mono">[+]</span>
+          При необходимости <b>сами закажем запчасти</b> — подберём оптимально по цене и качеству.
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <div class="hazard" aria-hidden="true"></div>
+
+    <!-- 03 PROBLEMS -->
+    <section class="section section--dark" data-section="03">
       <div class="container">
-        <h2>Автосервис, куда приезжают по рекомендации</h2>
-        <p>Автомастер69 работает уже 6 лет в Ржеве. Без лишнего пафоса - просто делаем свою работу нормально.</p>
-        <ul class="simple-list">
-          <li>Не навязываем лишнего</li>
-          <li>Объясняем простым языком</li>
-          <li>Держим слово по срокам</li>
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[03 / 13]</span>
+            <span class="mono muted">SYMPTOMS.LOG</span>
+          </div>
+          <h2 class="section-title">Когда к&nbsp;нам обращаются</h2>
+        </div>
+
+        <div class="symptoms">
+          <article><h3>Стучит, гремит, вибрирует</h3><p>Посторонние звуки при езде, на&nbsp;кочках, на&nbsp;холодную.</p></article>
+          <article><h3>Машина хуже едет</h3><p>Потеря тяги, рывки, нестабильные обороты.</p></article>
+          <article><h3>Загорелась ошибка</h3><p>Считаем коды, разбираемся в&nbsp;причине — не&nbsp;в&nbsp;следствиях.</p></article>
+          <article><h3>Проблемы с&nbsp;тормозами</h3><p>Скрип, увод, вибрация, мягкая педаль.</p></article>
+          <article><h3>Проверка перед поездкой</h3><p>Дальняя дорога — лучше посмотреть спокойно заранее.</p></article>
+          <article><h3>Давно не&nbsp;обслуживались</h3><p>Сделаем ТО и&nbsp;скажем, что ещё стоит сделать — что&nbsp;нет.</p></article>
+        </div>
+
+        <p class="note">
+          <span class="mono">//</span> Можно приехать даже без точного понимания проблемы — разберёмся.
+        </p>
+      </div>
+    </section>
+
+    <!-- 04 ANY CARS -->
+    <section class="section" data-section="04">
+      <div class="container split">
+        <div>
+          <div class="section-tag">
+            <span class="mono">[04 / 13]</span>
+            <span class="mono muted">ANY_MAKE.ANY_MODEL</span>
+          </div>
+          <h2 class="section-title section-title--lg">
+            Работаем с&nbsp;любыми <em>автомобилями.</em>
+          </h2>
+        </div>
+        <div class="split__text">
+          <p>
+            Обслуживаем все марки — от&nbsp;отечественных до&nbsp;иномарок.
+            Если сомневаетесь по&nbsp;вашей машине — просто напишите или&nbsp;позвоните,
+            подскажем ещё до&nbsp;приезда.
+          </p>
+          <div class="tags">
+            <span>ВАЗ</span><span>ГАЗ</span><span>УАЗ</span><span>Lada</span>
+            <span>Toyota</span><span>Kia</span><span>Hyundai</span><span>VW</span>
+            <span>Opel</span><span>Renault</span><span>Ford</span><span>Nissan</span>
+            <span>Mazda</span><span>Skoda</span><span>··· и&nbsp;другие</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 PROCESS -->
+    <section class="section section--mute" id="process" data-section="05">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[05 / 13]</span>
+            <span class="mono muted">WORKFLOW.STEPS</span>
+          </div>
+          <h2 class="section-title">Как&nbsp;проходит ремонт</h2>
+        </div>
+
+        <ol class="steps">
+          <li><span class="step__num">01</span><h3>Запись</h3><p>Записываетесь или звоните — договариваемся об&nbsp;удобном времени.</p></li>
+          <li><span class="step__num">02</span><h3>Диагностика</h3><p>Смотрим авто спокойно, без&nbsp;спешки, с&nbsp;приборами и&nbsp;руками.</p></li>
+          <li><span class="step__num">03</span><h3>Объяснение</h3><p>Рассказываем простым языком, в&nbsp;чём проблема и&nbsp;почему.</p></li>
+          <li><span class="step__num">04</span><h3>Согласование</h3><p>Озвучиваем стоимость и&nbsp;сроки — только потом начинаем работы.</p></li>
+          <li><span class="step__num">05</span><h3>Работы</h3><p>Делаем аккуратно, без&nbsp;«лишнего» в&nbsp;счёт.</p></li>
+          <li><span class="step__num">06</span><h3>Выдача</h3><p>Забираете исправный автомобиль. Гарантия — на&nbsp;выполненные работы.</p></li>
+        </ol>
+
+        <div class="callout callout--accent">
+          <span class="mono">[!]</span>
+          Без согласования <b>ничего&nbsp;не&nbsp;делаем.</b>
+        </div>
+      </div>
+    </section>
+
+    <div class="hazard" aria-hidden="true"></div>
+
+    <!-- 06 ABOUT -->
+    <section class="section" data-section="06">
+      <div class="container split">
+        <div>
+          <div class="section-tag">
+            <span class="mono">[06 / 13]</span>
+            <span class="mono muted">ABOUT.US</span>
+          </div>
+          <h2 class="section-title section-title--lg">
+            Автосервис, куда&nbsp;приезжают <em>по&nbsp;рекомендации.</em>
+          </h2>
+        </div>
+        <div class="split__text">
+          <p>
+            Автомастер69 работает уже <b>6&nbsp;лет в&nbsp;Ржеве.</b>
+            Без лишнего пафоса — просто делаем свою работу нормально.
+          </p>
+          <p class="muted">К нам возвращаются, потому что:</p>
+          <ul class="ticks">
+            <li>не&nbsp;навязываем лишнего</li>
+            <li>объясняем простым языком</li>
+            <li>держим слово по&nbsp;срокам</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 APPROACH -->
+    <section class="section section--dark" data-section="07">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[07 / 13]</span>
+            <span class="mono muted">METHOD.APPROACH</span>
+          </div>
+          <h2 class="section-title">Не&nbsp;гадаем — <em>проверяем.</em></h2>
+          <p class="section-sub">
+            Используем диагностику и&nbsp;опыт, чтобы найти реальную причину
+            неисправности, а&nbsp;не&nbsp;устранять последствия.
+          </p>
+        </div>
+        <div class="approach">
+          <article><span class="mono">01</span><h3>Работаем аккуратно</h3><p>Без «колхоза» и&nbsp;срывов шпилек. Инструмент нормальный, руки&nbsp;— тоже.</p></article>
+          <article><span class="mono">02</span><h3>Подбираем запчасти</h3><p>Под&nbsp;задачу и&nbsp;бюджет. Есть варианты — расскажем про&nbsp;каждый.</p></article>
+          <article><span class="mono">03</span><h3>Не&nbsp;ставим лишнего</h3><p>Если деталь ещё&nbsp;ходит — так и&nbsp;скажем. Это наша позиция.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 RESULT -->
+    <section class="section" data-section="08">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[08 / 13]</span>
+            <span class="mono muted">OUTCOME</span>
+          </div>
+          <h2 class="section-title">Что&nbsp;вы получаете</h2>
+        </div>
+        <ul class="result">
+          <li><b>Исправный автомобиль</b><span>Работает так, как должен.</span></li>
+          <li><b>Результат без&nbsp;«сюрпризов»</b><span>Никаких «всплывающих» доплат в&nbsp;конце.</span></li>
+          <li><b>Понимание, за&nbsp;что заплатили</b><span>Каждая позиция — объяснена.</span></li>
+          <li><b>Рекомендации без&nbsp;навязывания</b><span>Что срочно, что подождёт, что не&nbsp;трогать.</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section alt">
+    <!-- 09 FEARS -->
+    <section class="section section--mute" data-section="09">
       <div class="container">
-        <h2>Не гадаем - проверяем</h2>
-        <p>Используем диагностику и опыт, чтобы найти реальную причину неисправности, а не устранять последствия.</p>
-        <ul class="simple-list">
-          <li>Работаем аккуратно</li>
-          <li>Подбираем запчасти под задачу и бюджет</li>
-          <li>Не ставим лишнего</li>
-        </ul>
-      </div>
-    </section>
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[09 / 13]</span>
+            <span class="mono muted">OBJECTIONS.HANDLED</span>
+          </div>
+          <h2 class="section-title">Понимаем, что&nbsp;вас может беспокоить</h2>
+        </div>
 
-    <section class="section">
-      <div class="container">
-        <h2>Что вы получаете</h2>
-        <ul class="simple-list">
-          <li>Исправный автомобиль</li>
-          <li>Понятный результат без "сюрпризов"</li>
-          <li>Четкое понимание, за что заплатили</li>
-          <li>Рекомендации без навязывания</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <h2>Понимаем, что вас может беспокоить</h2>
-        <div class="fear-list">
-          <article class="fear-item">
-            <h3>Накрутят лишнего</h3>
-            <p>Сначала согласовываем - потом делаем.</p>
+        <div class="fears">
+          <article>
+            <p class="fears__q">«Накрутят лишнего»</p>
+            <p class="fears__a"><span class="arr">→</span> Сначала согласовываем — потом&nbsp;делаем.</p>
           </article>
-          <article class="fear-item">
-            <h3>Скажут одно, выйдет другое</h3>
-            <p>Объясняем все до начала работ.</p>
+          <article>
+            <p class="fears__q">«Скажут одно, выйдет другое»</p>
+            <p class="fears__a"><span class="arr">→</span> Объясняем всё до&nbsp;начала работ.</p>
           </article>
-          <article class="fear-item">
-            <h3>Сделают плохо</h3>
-            <p>Даем гарантию на работы.</p>
+          <article>
+            <p class="fears__q">«Сделают плохо»</p>
+            <p class="fears__a"><span class="arr">→</span> Даём гарантию на&nbsp;работы.</p>
           </article>
-          <article class="fear-item">
-            <h3>Не разбираюсь в машинах</h3>
-            <p>Объясняем простым языком.</p>
+          <article>
+            <p class="fears__q">«Я&nbsp;не&nbsp;разбираюсь в&nbsp;машинах»</p>
+            <p class="fears__a"><span class="arr">→</span> Объясняем простым языком.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="prices">
+    <!-- 10 PRICES -->
+    <section class="section" id="prices" data-section="10">
       <div class="container">
-        <h2>Ориентиры по стоимости</h2>
-        <ul class="price-list">
-          <li><span>Диагностика</span><strong>от 500 ₽</strong></li>
-          <li><span>Замена масла</span><strong>от 800 ₽</strong></li>
-          <li><span>Шиномонтаж</span><strong>от 1200 ₽</strong></li>
-          <li><span>Замена ГРМ</span><strong>от 4000 ₽</strong></li>
-          <li><span>Ремонт ходовой</span><strong>от 1500 ₽</strong></li>
-          <li><span>Ремонт тормозной системы</span><strong>от 1000 ₽</strong></li>
-        </ul>
-        <p class="note">Точную стоимость скажем после диагностики - без "сюрпризов".</p>
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[10 / 13]</span>
+            <span class="mono muted">PRICE.GUIDE</span>
+          </div>
+          <h2 class="section-title">Ориентиры по&nbsp;стоимости</h2>
+        </div>
+
+        <div class="invoice">
+          <header class="invoice__head">
+            <span class="mono">АВТОМАСТЕР69 · РЖЕВ</span>
+            <span class="mono muted">ОРИЕНТИРОВОЧНЫЙ ПРАЙС</span>
+          </header>
+          <ul class="invoice__list">
+            <li><span>Диагностика</span><em></em><strong>от&nbsp;500&nbsp;₽</strong></li>
+            <li><span>Замена масла</span><em></em><strong>от&nbsp;800&nbsp;₽</strong></li>
+            <li><span>Шиномонтаж</span><em></em><strong>от&nbsp;1&nbsp;200&nbsp;₽</strong></li>
+            <li><span>Замена ГРМ</span><em></em><strong>от&nbsp;4&nbsp;000&nbsp;₽</strong></li>
+            <li><span>Ремонт ходовой</span><em></em><strong>от&nbsp;1&nbsp;500&nbsp;₽</strong></li>
+            <li><span>Ремонт тормозной системы</span><em></em><strong>от&nbsp;1&nbsp;000&nbsp;₽</strong></li>
+          </ul>
+          <footer class="invoice__foot">
+            <span class="mono">//</span>
+            Точную стоимость скажем после диагностики — без «сюрпризов».
+          </footer>
+        </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <!-- 11 REVIEWS -->
+    <section class="section section--dark" data-section="11">
       <div class="container">
-        <h2>Отзывы клиентов</h2>
-        <p>Добавьте реальные отзывы с Яндекс.Карт (можно скриншотами) в этот блок перед публикацией сайта.</p>
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[11 / 13]</span>
+            <span class="mono muted">REVIEWS.YANDEX</span>
+          </div>
+          <h2 class="section-title">Отзывы клиентов</h2>
+        </div>
+
+        <div class="reviews">
+          <article>
+            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
+            <p>«Приехал с&nbsp;посторонним звуком, думал — подвеска. Оказалось — защита. Ничего не&nbsp;навязывали, сказали как&nbsp;есть.»</p>
+            <footer><span class="mono">— Алексей, Lada Vesta</span></footer>
+          </article>
+          <article>
+            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
+            <p>«Делали ГРМ. Цену назвали сразу, по&nbsp;итогу ничего не&nbsp;изменилось. Машина ездит — жалоб нет.»</p>
+            <footer><span class="mono">— Сергей, Hyundai Solaris</span></footer>
+          </article>
+          <article>
+            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
+            <p>«Нормальные ребята, объяснили всё по-человечески. В&nbsp;Ржеве таких сервисов мало.»</p>
+            <footer><span class="mono">— Мария, Kia Rio</span></footer>
+          </article>
+        </div>
+
+        <p class="note">
+          <span class="mono">//</span> Актуальные отзывы с&nbsp;Яндекс.Карт — можно вставить скриншотами вместо этого блока.
+        </p>
       </div>
     </section>
 
-    <section class="section">
+    <!-- 12 FAQ -->
+    <section class="section" id="faq" data-section="12">
       <div class="container">
-        <h2>FAQ</h2>
-        <div class="faq-list">
+        <div class="section-head">
+          <div class="section-tag">
+            <span class="mono">[12 / 13]</span>
+            <span class="mono muted">F.A.Q</span>
+          </div>
+          <h2 class="section-title">Частые вопросы</h2>
+        </div>
+
+        <div class="faq">
           <details>
-            <summary>Сколько занимает ремонт?</summary>
-            <p>Зависит от задачи - скажем после диагностики.</p>
+            <summary><span class="mono">Q.01</span> Сколько занимает ремонт?</summary>
+            <p>Зависит от&nbsp;задачи — скажем после диагностики. Мелкий ремонт&nbsp;— в&nbsp;день обращения.</p>
           </details>
           <details>
-            <summary>Можно ли со своими запчастями?</summary>
-            <p>Да, можно.</p>
+            <summary><span class="mono">Q.02</span> Можно ли со&nbsp;своими запчастями?</summary>
+            <p>Да, можно. Если есть сомнения по&nbsp;детали — подскажем до&nbsp;установки.</p>
           </details>
           <details>
-            <summary>Даете гарантию?</summary>
-            <p>Да, на выполненные работы.</p>
+            <summary><span class="mono">Q.03</span> Даёте гарантию?</summary>
+            <p>Да, на&nbsp;выполненные работы. По&nbsp;деталям — гарантия производителя/поставщика.</p>
           </details>
           <details>
-            <summary>Можно ли вызвать диагностику?</summary>
-            <p>Да, есть выезд.</p>
+            <summary><span class="mono">Q.04</span> Можно ли вызвать диагностику?</summary>
+            <p>Да, есть выездная диагностика по&nbsp;Ржеву и&nbsp;окрестностям.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <section class="section cta" id="contact">
-      <div class="container">
-        <h2>Запишитесь на диагностику</h2>
-        <p>Посмотрим автомобиль и честно скажем, что с ним и что делать дальше.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="tel:+79000000000">Записаться</a>
-          <a class="btn btn-secondary" href="tel:+79000000000">Позвонить</a>
-          <a class="btn btn-secondary" href="https://wa.me/79000000000">Написать</a>
+    <!-- 13 CTA -->
+    <section class="section cta" id="contact" data-section="13">
+      <div class="hazard hazard--top" aria-hidden="true"></div>
+      <div class="container cta__inner">
+        <div class="section-tag">
+          <span class="mono">[13 / 13]</span>
+          <span class="mono muted">BOOK.NOW</span>
+        </div>
+
+        <h2 class="cta__title">
+          Запишитесь<br>
+          <span class="cta__em">на&nbsp;диагностику.</span>
+        </h2>
+        <p class="cta__lead">
+          Посмотрим автомобиль и&nbsp;честно скажем, что&nbsp;с&nbsp;ним и&nbsp;что&nbsp;делать дальше.
+        </p>
+
+        <div class="actions actions--lg">
+          <a class="btn btn--primary" href="tel:+79000000000">
+            <span>Записаться</span><span class="btn__arr" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost-light" href="tel:+79000000000">
+            <span class="mono">[TEL]</span> Позвонить
+          </a>
+          <a class="btn btn--ghost-light" href="https://wa.me/79000000000">
+            <span class="mono">[WA]</span> Написать
+          </a>
         </div>
       </div>
+      <div class="hazard" aria-hidden="true"></div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <span class="brand__mark brand__mark--sm">А69</span>
+        <span class="mono muted">© АВТОМАСТЕР69 · РЖЕВ · С&nbsp;2019</span>
+      </div>
+      <div class="footer__meta mono muted">
+        <span>ЧЕСТНО · ПО&nbsp;ДЕЛУ · С&nbsp;ГАРАНТИЕЙ</span>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

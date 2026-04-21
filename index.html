@@ -14,7 +14,73 @@
 </head>
 <body>
 
+  <!-- SVG duotone filter -->
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="duotone" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.33 0.34 0.33 0 0
+          0.33 0.34 0.33 0 0
+          0.33 0.34 0.33 0 0
+          0    0    0    1 0"/>
+        <feComponentTransfer>
+          <feFuncR tableValues="0.05 1.00"/>
+          <feFuncG tableValues="0.04 0.83"/>
+          <feFuncB tableValues="0.05 0.02"/>
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- Speedometer preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <svg class="preloader__gauge" viewBox="0 0 220 140">
+        <g stroke="#2d2e31" stroke-width="2" fill="none">
+          <path d="M 25 115 A 85 85 0 0 1 195 115"/>
+        </g>
+        <g stroke="#3a3a3d" stroke-width="2" fill="none" stroke-linecap="square">
+          <line x1="25"  y1="115" x2="35"  y2="110"/>
+          <line x1="40"  y1="78"  x2="50"  y2="80"/>
+          <line x1="70"  y1="48"  x2="78"  y2="54"/>
+          <line x1="110" y1="34"  x2="110" y2="44"/>
+          <line x1="150" y1="48"  x2="142" y2="54"/>
+          <line x1="180" y1="78"  x2="170" y2="80"/>
+          <line x1="195" y1="115" x2="185" y2="110"/>
+        </g>
+        <path class="preloader__arc" d="M 25 115 A 85 85 0 0 1 195 115"
+              stroke="#ffd400" stroke-width="4" fill="none" stroke-linecap="square"
+              pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+        <g class="preloader__needle-group">
+          <line class="preloader__needle" x1="110" y1="115" x2="110" y2="42"
+                stroke="#ffd400" stroke-width="3" stroke-linecap="round"/>
+        </g>
+        <circle cx="110" cy="115" r="8" fill="#0a0a0b" stroke="#ffd400" stroke-width="2"/>
+      </svg>
+      <div class="preloader__meta">
+        <span class="mono">АВТОМАСТЕР69 · РЖЕВ</span>
+        <span class="mono preloader__pct"><i id="preloader-pct">00</i>%</span>
+      </div>
+      <div class="preloader__bar" aria-hidden="true"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"></div>
+    <div class="cursor__dot"></div>
+  </div>
+
   <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Section tracker -->
+  <aside class="tracker" aria-hidden="true">
+    <span class="mono tracker__num">01 / 13</span>
+    <span class="tracker__line"></span>
+    <span class="mono tracker__label">FIRST_SCREEN.TXT</span>
+    <span class="tracker__dot"></span>
+  </aside>
 
   <header class="topbar">
     <div class="container topbar__inner">
@@ -41,7 +107,7 @@
   <main id="top">
 
     <!-- 01 HERO -->
-    <section class="hero" data-section="01">
+    <section class="hero" data-section="01" data-label="FIRST_SCREEN.TXT">
       <div class="container hero__inner">
         <div class="section-tag">
           <span class="mono">[01 / 13]</span>
@@ -50,10 +116,24 @@
 
         <h1 class="hero__title">
           <span class="line">ЧЕСТНЫЙ</span>
-          <span class="line line--accent">РЕМОНТ АВТО</span>
+          <span class="line line--accent" data-scramble="РЕМОНТ АВТО">РЕМОНТ АВТО</span>
           <span class="line">В РЖЕВЕ —</span>
           <span class="line line--thin">без лишних затрат.</span>
         </h1>
+
+        <figure class="hero__photo">
+          <div class="hero__photo-frame">
+            <img src="assets/master.png" alt="Мастер Автомастер69 в сервисе" loading="eager">
+            <span class="hero__photo-badge" aria-hidden="true">
+              <span class="mono">[MECHANIC]</span>
+            </span>
+            <span class="hero__photo-corner" aria-hidden="true"></span>
+          </div>
+          <figcaption class="hero__photo-strip">
+            <span class="mono">МАСТЕР · 06 ЛЕТ · РЖЕВ</span>
+            <span class="mono accent">ON&nbsp;DUTY</span>
+          </figcaption>
+        </figure>
 
         <div class="hero__aside">
           <p class="lead">
@@ -62,8 +142,8 @@
           </p>
 
           <ul class="stats">
-            <li><span class="stats__num">06</span><span class="stats__lbl">лет&nbsp;в работе</span></li>
-            <li><span class="stats__num">14</span><span class="stats__lbl">видов услуг</span></li>
+            <li><span class="stats__num" data-count="6" data-pad="2">00</span><span class="stats__lbl">лет&nbsp;в работе</span></li>
+            <li><span class="stats__num" data-count="14" data-pad="2">00</span><span class="stats__lbl">видов услуг</span></li>
             <li><span class="stats__num">∞</span><span class="stats__lbl">марок&nbsp;авто</span></li>
             <li><span class="stats__num">✓</span><span class="stats__lbl">гарантия</span></li>
           </ul>
@@ -73,7 +153,7 @@
               <span>Записаться на диагностику</span>
               <span class="btn__arr" aria-hidden="true">→</span>
             </a>
-            <a class="btn btn--ghost" href="#prices">
+            <a class="btn btn--ghost-light" href="#prices">
               <span>Узнать стоимость</span>
             </a>
           </div>
@@ -89,9 +169,9 @@
     </section>
 
     <!-- 02 SERVICES -->
-    <section class="section services" id="services" data-section="02">
+    <section class="section services" id="services" data-section="02" data-label="SERVICES.LIST">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[02 / 13]</span>
             <span class="mono muted">SERVICES.LIST</span>
@@ -103,7 +183,7 @@
           </p>
         </div>
 
-        <ol class="svc-grid">
+        <ol class="svc-grid" data-reveal-group>
           <li><i>01</i><b>Диагностика</b><span>в&nbsp;т.ч. выездная</span></li>
           <li><i>02</i><b>Шиномонтаж</b><span>сезон / срочный</span></li>
           <li><i>03</i><b>Сварочные работы</b><span>кузов, глушитель</span></li>
@@ -120,7 +200,7 @@
           <li><i>14</i><b>Удаление катализаторов</b><span>с&nbsp;прошивкой</span></li>
         </ol>
 
-        <div class="callout">
+        <div class="callout" data-reveal>
           <span class="mono">[+]</span>
           При необходимости <b>сами закажем запчасти</b> — подберём оптимально по цене и качеству.
         </div>
@@ -130,9 +210,9 @@
     <div class="hazard" aria-hidden="true"></div>
 
     <!-- 03 PROBLEMS -->
-    <section class="section section--dark" data-section="03">
+    <section class="section section--dark" data-section="03" data-label="SYMPTOMS.LOG">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[03 / 13]</span>
             <span class="mono muted">SYMPTOMS.LOG</span>
@@ -140,7 +220,7 @@
           <h2 class="section-title">Когда к&nbsp;нам обращаются</h2>
         </div>
 
-        <div class="symptoms">
+        <div class="symptoms" data-reveal-group>
           <article><h3>Стучит, гремит, вибрирует</h3><p>Посторонние звуки при езде, на&nbsp;кочках, на&nbsp;холодную.</p></article>
           <article><h3>Машина хуже едет</h3><p>Потеря тяги, рывки, нестабильные обороты.</p></article>
           <article><h3>Загорелась ошибка</h3><p>Считаем коды, разбираемся в&nbsp;причине — не&nbsp;в&nbsp;следствиях.</p></article>
@@ -156,9 +236,9 @@
     </section>
 
     <!-- 04 ANY CARS -->
-    <section class="section" data-section="04">
+    <section class="section" data-section="04" data-label="ANY_MAKE.ANY_MODEL">
       <div class="container split">
-        <div>
+        <div data-reveal="left">
           <div class="section-tag">
             <span class="mono">[04 / 13]</span>
             <span class="mono muted">ANY_MAKE.ANY_MODEL</span>
@@ -167,13 +247,13 @@
             Работаем с&nbsp;любыми <em>автомобилями.</em>
           </h2>
         </div>
-        <div class="split__text">
+        <div class="split__text" data-reveal="right">
           <p>
             Обслуживаем все марки — от&nbsp;отечественных до&nbsp;иномарок.
             Если сомневаетесь по&nbsp;вашей машине — просто напишите или&nbsp;позвоните,
             подскажем ещё до&nbsp;приезда.
           </p>
-          <div class="tags">
+          <div class="tags" data-reveal-group>
             <span>ВАЗ</span><span>ГАЗ</span><span>УАЗ</span><span>Lada</span>
             <span>Toyota</span><span>Kia</span><span>Hyundai</span><span>VW</span>
             <span>Opel</span><span>Renault</span><span>Ford</span><span>Nissan</span>
@@ -184,9 +264,9 @@
     </section>
 
     <!-- 05 PROCESS -->
-    <section class="section section--mute" id="process" data-section="05">
+    <section class="section section--mute" id="process" data-section="05" data-label="WORKFLOW.STEPS">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[05 / 13]</span>
             <span class="mono muted">WORKFLOW.STEPS</span>
@@ -194,7 +274,7 @@
           <h2 class="section-title">Как&nbsp;проходит ремонт</h2>
         </div>
 
-        <ol class="steps">
+        <ol class="steps" data-reveal-group>
           <li><span class="step__num">01</span><h3>Запись</h3><p>Записываетесь или звоните — договариваемся об&nbsp;удобном времени.</p></li>
           <li><span class="step__num">02</span><h3>Диагностика</h3><p>Смотрим авто спокойно, без&nbsp;спешки, с&nbsp;приборами и&nbsp;руками.</p></li>
           <li><span class="step__num">03</span><h3>Объяснение</h3><p>Рассказываем простым языком, в&nbsp;чём проблема и&nbsp;почему.</p></li>
@@ -203,7 +283,7 @@
           <li><span class="step__num">06</span><h3>Выдача</h3><p>Забираете исправный автомобиль. Гарантия — на&nbsp;выполненные работы.</p></li>
         </ol>
 
-        <div class="callout callout--accent">
+        <div class="callout callout--accent" data-reveal>
           <span class="mono">[!]</span>
           Без согласования <b>ничего&nbsp;не&nbsp;делаем.</b>
         </div>
@@ -213,9 +293,9 @@
     <div class="hazard" aria-hidden="true"></div>
 
     <!-- 06 ABOUT -->
-    <section class="section" data-section="06">
+    <section class="section" data-section="06" data-label="ABOUT.US">
       <div class="container split">
-        <div>
+        <div data-reveal="left">
           <div class="section-tag">
             <span class="mono">[06 / 13]</span>
             <span class="mono muted">ABOUT.US</span>
@@ -224,7 +304,7 @@
             Автосервис, куда&nbsp;приезжают <em>по&nbsp;рекомендации.</em>
           </h2>
         </div>
-        <div class="split__text">
+        <div class="split__text" data-reveal="right">
           <p>
             Автомастер69 работает уже <b>6&nbsp;лет в&nbsp;Ржеве.</b>
             Без лишнего пафоса — просто делаем свою работу нормально.
@@ -240,9 +320,9 @@
     </section>
 
     <!-- 07 APPROACH -->
-    <section class="section section--dark" data-section="07">
+    <section class="section section--dark" data-section="07" data-label="METHOD.APPROACH">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[07 / 13]</span>
             <span class="mono muted">METHOD.APPROACH</span>
@@ -253,7 +333,7 @@
             неисправности, а&nbsp;не&nbsp;устранять последствия.
           </p>
         </div>
-        <div class="approach">
+        <div class="approach" data-reveal-group>
           <article><span class="mono">01</span><h3>Работаем аккуратно</h3><p>Без «колхоза» и&nbsp;срывов шпилек. Инструмент нормальный, руки&nbsp;— тоже.</p></article>
           <article><span class="mono">02</span><h3>Подбираем запчасти</h3><p>Под&nbsp;задачу и&nbsp;бюджет. Есть варианты — расскажем про&nbsp;каждый.</p></article>
           <article><span class="mono">03</span><h3>Не&nbsp;ставим лишнего</h3><p>Если деталь ещё&nbsp;ходит — так и&nbsp;скажем. Это наша позиция.</p></article>
@@ -262,16 +342,16 @@
     </section>
 
     <!-- 08 RESULT -->
-    <section class="section" data-section="08">
+    <section class="section" data-section="08" data-label="OUTCOME">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[08 / 13]</span>
             <span class="mono muted">OUTCOME</span>
           </div>
           <h2 class="section-title">Что&nbsp;вы получаете</h2>
         </div>
-        <ul class="result">
+        <ul class="result" data-reveal-group>
           <li><b>Исправный автомобиль</b><span>Работает так, как должен.</span></li>
           <li><b>Результат без&nbsp;«сюрпризов»</b><span>Никаких «всплывающих» доплат в&nbsp;конце.</span></li>
           <li><b>Понимание, за&nbsp;что заплатили</b><span>Каждая позиция — объяснена.</span></li>
@@ -281,9 +361,9 @@
     </section>
 
     <!-- 09 FEARS -->
-    <section class="section section--mute" data-section="09">
+    <section class="section section--mute" data-section="09" data-label="OBJECTIONS.HANDLED">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[09 / 13]</span>
             <span class="mono muted">OBJECTIONS.HANDLED</span>
@@ -291,7 +371,7 @@
           <h2 class="section-title">Понимаем, что&nbsp;вас может беспокоить</h2>
         </div>
 
-        <div class="fears">
+        <div class="fears" data-reveal-group>
           <article>
             <p class="fears__q">«Накрутят лишнего»</p>
             <p class="fears__a"><span class="arr">→</span> Сначала согласовываем — потом&nbsp;делаем.</p>
@@ -313,9 +393,9 @@
     </section>
 
     <!-- 10 PRICES -->
-    <section class="section" id="prices" data-section="10">
+    <section class="section" id="prices" data-section="10" data-label="PRICE.GUIDE">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[10 / 13]</span>
             <span class="mono muted">PRICE.GUIDE</span>
@@ -323,7 +403,7 @@
           <h2 class="section-title">Ориентиры по&nbsp;стоимости</h2>
         </div>
 
-        <div class="invoice">
+        <div class="invoice" data-reveal>
           <header class="invoice__head">
             <span class="mono">АВТОМАСТЕР69 · РЖЕВ</span>
             <span class="mono muted">ОРИЕНТИРОВОЧНЫЙ ПРАЙС</span>
@@ -341,13 +421,30 @@
             Точную стоимость скажем после диагностики — без «сюрпризов».
           </footer>
         </div>
+
+        <div class="price-marquee" aria-hidden="true">
+          <div class="price-marquee__track">
+            <span>ДИАГНОСТИКА · ОТ&nbsp;500&nbsp;₽</span><em>★</em>
+            <span>ЗАМЕНА&nbsp;МАСЛА · ОТ&nbsp;800&nbsp;₽</span><em>★</em>
+            <span>ШИНОМОНТАЖ · ОТ&nbsp;1&nbsp;200&nbsp;₽</span><em>★</em>
+            <span>ЗАМЕНА&nbsp;ГРМ · ОТ&nbsp;4&nbsp;000&nbsp;₽</span><em>★</em>
+            <span>РЕМОНТ&nbsp;ХОДОВОЙ · ОТ&nbsp;1&nbsp;500&nbsp;₽</span><em>★</em>
+            <span>ТОРМОЗА · ОТ&nbsp;1&nbsp;000&nbsp;₽</span><em>★</em>
+            <span>ДИАГНОСТИКА · ОТ&nbsp;500&nbsp;₽</span><em>★</em>
+            <span>ЗАМЕНА&nbsp;МАСЛА · ОТ&nbsp;800&nbsp;₽</span><em>★</em>
+            <span>ШИНОМОНТАЖ · ОТ&nbsp;1&nbsp;200&nbsp;₽</span><em>★</em>
+            <span>ЗАМЕНА&nbsp;ГРМ · ОТ&nbsp;4&nbsp;000&nbsp;₽</span><em>★</em>
+            <span>РЕМОНТ&nbsp;ХОДОВОЙ · ОТ&nbsp;1&nbsp;500&nbsp;₽</span><em>★</em>
+            <span>ТОРМОЗА · ОТ&nbsp;1&nbsp;000&nbsp;₽</span><em>★</em>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- 11 REVIEWS -->
-    <section class="section section--dark" data-section="11">
+    <section class="section section--dark" data-section="11" data-label="REVIEWS.YANDEX">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[11 / 13]</span>
             <span class="mono muted">REVIEWS.YANDEX</span>
@@ -355,7 +452,7 @@
           <h2 class="section-title">Отзывы клиентов</h2>
         </div>
 
-        <div class="reviews">
+        <div class="reviews" data-reveal-group>
           <article>
             <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
             <p>«Приехал с&nbsp;посторонним звуком, думал — подвеска. Оказалось — защита. Ничего не&nbsp;навязывали, сказали как&nbsp;есть.»</p>
@@ -380,9 +477,9 @@
     </section>
 
     <!-- 12 FAQ -->
-    <section class="section" id="faq" data-section="12">
+    <section class="section" id="faq" data-section="12" data-label="F.A.Q">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <div class="section-tag">
             <span class="mono">[12 / 13]</span>
             <span class="mono muted">F.A.Q</span>
@@ -390,7 +487,7 @@
           <h2 class="section-title">Частые вопросы</h2>
         </div>
 
-        <div class="faq">
+        <div class="faq" data-reveal-group>
           <details>
             <summary><span class="mono">Q.01</span> Сколько занимает ремонт?</summary>
             <p>Зависит от&nbsp;задачи — скажем после диагностики. Мелкий ремонт&nbsp;— в&nbsp;день обращения.</p>
@@ -412,9 +509,9 @@
     </section>
 
     <!-- 13 CTA -->
-    <section class="section cta" id="contact" data-section="13">
+    <section class="section cta" id="contact" data-section="13" data-label="BOOK.NOW">
       <div class="hazard hazard--top" aria-hidden="true"></div>
-      <div class="container cta__inner">
+      <div class="container cta__inner" data-reveal>
         <div class="section-tag">
           <span class="mono">[13 / 13]</span>
           <span class="mono muted">BOOK.NOW</span>
@@ -440,7 +537,7 @@
           </a>
         </div>
       </div>
-      <div class="hazard" aria-hidden="true"></div>
+      <div class="hazard" aria-hidden="true">      </div>
     </section>
   </main>
 
@@ -456,5 +553,6 @@
     </div>
   </footer>
 
+  <script src="script.js" defer></script>
 </body>
 </html>

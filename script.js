@@ -62,7 +62,7 @@
     };
     loop();
 
-    const hoverSel = 'a, button, summary, .btn, .faq summary, .svc-grid li, .fears article, .approach article';
+    const hoverSel = 'a, button, summary, .btn, .faq summary, .svc-grid li, .fears article, .approach article, input, textarea';
     document.querySelectorAll(hoverSel).forEach((el) => {
       el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
@@ -189,8 +189,10 @@
     onScrollPhoto();
   }
 
-  /* ---------- 8. MAGNETIC BUTTONS ---------- */
-  const magnetic = document.querySelectorAll('.btn--primary');
+  /* ---------- 8. MAGNETIC BUTTONS ----------
+     Не вешаем смещение на <a class="btn--primary">: transform уводит кнопку под курсором,
+     и клик по tel:/якорю часто не доходит (mouseup снаружи ссылки). */
+  const magnetic = document.querySelectorAll('.btn--primary:not(a)');
   if (!reduceMotion && canHover) {
     magnetic.forEach((btn) => {
       const strength = 14;
@@ -270,6 +272,39 @@
     } else {
       startAll();
     }
+  }
+
+  /* ---------- 11. BOOKING FORM → ВКонтакте (копия текста + вкладка сообщества) ---------- */
+  const bookingForm = document.getElementById('booking-form');
+  const vkCommunityUrl = 'https://vk.ru/avtoserviss69';
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (typeof bookingForm.reportValidity === 'function' && !bookingForm.reportValidity()) return;
+      const nameEl = bookingForm.querySelector('[name="name"]');
+      const phoneEl = bookingForm.querySelector('[name="phone"]');
+      const carEl = bookingForm.querySelector('[name="car"]');
+      const msgEl = bookingForm.querySelector('[name="message"]');
+      const name = (nameEl?.value || '').trim();
+      const phone = (phoneEl?.value || '').trim();
+      const car = (carEl?.value || '').trim();
+      const message = (msgEl?.value || '').trim();
+      const lines = [
+        'Заявка с сайта Автомастер69',
+        '',
+        `Имя: ${name}`,
+        `Телефон: ${phone}`,
+      ];
+      if (car) lines.push(`Автомобиль: ${car}`);
+      if (message) lines.push(`Комментарий: ${message}`);
+      const text = lines.join('\n');
+      const openVk = () => window.open(vkCommunityUrl, '_blank', 'noopener,noreferrer');
+      if (navigator.clipboard?.writeText && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(openVk).catch(openVk);
+      } else {
+        openVk();
+      }
+    });
   }
 
 })();

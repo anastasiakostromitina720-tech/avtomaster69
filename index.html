@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Автомастер69 — автосервис в Ржеве. Честный ремонт, диагностика, гарантия на работы. 6 лет опыта.">
+  <meta name="description" content="Автомастер69 — автосервис в Ржеве, ул. Соколова, 56А. Тел. +7 (980) 641-77-47, ВКонтакте vk.ru/avtoserviss69. Честный ремонт, диагностика, гарантия. 6 лет опыта.">
   <title>Автомастер69 · Ржев — Честный ремонт авто</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,9 +96,10 @@
         <a href="#process">Процесс</a>
         <a href="#prices">Цены</a>
         <a href="#faq">FAQ</a>
+        <a href="#contact">Контакты</a>
       </nav>
-      <a class="topphone" href="tel:+79000000000">
-        <span class="mono">[TEL]</span> +7 (900) 000-00-00
+      <a class="topphone" href="tel:+79806417747">
+        <span class="mono">[TEL]</span> +7 (980) 641-77-47
       </a>
     </div>
     <div class="hazard" aria-hidden="true"></div>
@@ -450,29 +451,22 @@
             <span class="mono muted">REVIEWS.YANDEX</span>
           </div>
           <h2 class="section-title">Отзывы клиентов</h2>
+          <p class="section-sub">
+            Живые отзывы и оценки с&nbsp;карточки <strong>Автомастер&nbsp;69</strong> на Яндекс.Картах (обновляются автоматически).
+          </p>
         </div>
 
-        <div class="reviews" data-reveal-group>
-          <article>
-            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
-            <p>«Приехал с&nbsp;посторонним звуком, думал — подвеска. Оказалось — защита. Ничего не&nbsp;навязывали, сказали как&nbsp;есть.»</p>
-            <footer><span class="mono">— Алексей, Lada Vesta</span></footer>
-          </article>
-          <article>
-            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
-            <p>«Делали ГРМ. Цену назвали сразу, по&nbsp;итогу ничего не&nbsp;изменилось. Машина ездит — жалоб нет.»</p>
-            <footer><span class="mono">— Сергей, Hyundai Solaris</span></footer>
-          </article>
-          <article>
-            <div class="reviews__stars" aria-label="5 из 5">★★★★★</div>
-            <p>«Нормальные ребята, объяснили всё по-человечески. В&nbsp;Ржеве таких сервисов мало.»</p>
-            <footer><span class="mono">— Мария, Kia Rio</span></footer>
-          </article>
+        <div class="yandex-reviews-wrap" data-reveal>
+          <iframe
+            class="yandex-reviews-frame"
+            src="https://yandex.ru/maps-reviews-widget/51187915704?comments"
+            width="560"
+            height="640"
+            style="border:0;"
+            loading="lazy"
+            title="Отзывы об Автомастер 69 на Яндекс.Картах"></iframe>
+          <a class="yandex-reviews-caption mono" href="https://yandex.ru/maps/org/avtomaster_69/51187915704/reviews" target="_blank" rel="noopener noreferrer">Все отзывы на Яндекс.Картах →</a>
         </div>
-
-        <p class="note">
-          <span class="mono">//</span> Актуальные отзывы с&nbsp;Яндекс.Карт — можно вставить скриншотами вместо этого блока.
-        </p>
       </div>
     </section>
 
@@ -525,15 +519,63 @@
           Посмотрим автомобиль и&nbsp;честно скажем, что&nbsp;с&nbsp;ним и&nbsp;что&nbsp;делать дальше.
         </p>
 
+        <address class="cta__address">
+          <span class="mono">[ADDR]</span>
+          Тверская область, г.&nbsp;Ржев, ул.&nbsp;Соколова, 56А
+        </address>
+
+        <div class="cta__grid" data-reveal-group>
+          <div class="cta__map">
+            <div class="cta__map-frame">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?oid=51187915704&amp;z=16&amp;lang=ru_RU"
+                width="560"
+                height="400"
+                style="border:0;"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Автомастер 69 — точка на Яндекс.Картах"></iframe>
+            </div>
+            <a class="cta__map-link mono" href="https://yandex.ru/maps/org/51187915704/" target="_blank" rel="noopener noreferrer">Карточка организации и маршрут в Яндекс.Картах →</a>
+          </div>
+
+          <form class="booking-form" id="booking-form" action="#" method="post">
+            <h3 class="booking-form__title">Заявка на запись</h3>
+            <p class="booking-form__hint muted">Заполните поля — текст заявки скопируется, откроется ВКонтакте; вставьте сообщение в диалог с сообществом (Ctrl+V).</p>
+            <label class="booking-form__field">
+              <span class="mono booking-form__lbl">Имя</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
+            </label>
+            <label class="booking-form__field">
+              <span class="mono booking-form__lbl">Телефон</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+7 (980) 641-77-47" required>
+            </label>
+            <label class="booking-form__field">
+              <span class="mono booking-form__lbl">Автомобиль</span>
+              <input type="text" name="car" autocomplete="off" placeholder="Марка и модель (по желанию)">
+            </label>
+            <label class="booking-form__field">
+              <span class="mono booking-form__lbl">Комментарий</span>
+              <textarea name="message" rows="4" placeholder="Что беспокоит, удобное время"></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary booking-form__submit">
+              <span>Написать во ВКонтакте</span><span class="btn__arr" aria-hidden="true">→</span>
+            </button>
+            <p class="booking-form__legal mono muted">
+              <a href="privacy.html">Политика конфиденциальности</a>
+              <span class="booking-form__legal-sep" aria-hidden="true">·</span>
+              <a href="offer.html">Публичная оферта</a>
+            </p>
+          </form>
+        </div>
+
         <div class="actions actions--lg">
-          <a class="btn btn--primary" href="tel:+79000000000">
-            <span>Записаться</span><span class="btn__arr" aria-hidden="true">→</span>
+          <a class="btn btn--primary" href="tel:+79806417747">
+            <span>Позвонить</span><span class="btn__arr" aria-hidden="true">→</span>
           </a>
-          <a class="btn btn--ghost-light" href="tel:+79000000000">
-            <span class="mono">[TEL]</span> Позвонить
-          </a>
-          <a class="btn btn--ghost-light" href="https://wa.me/79000000000">
-            <span class="mono">[WA]</span> Написать
+          <a class="btn btn--ghost-light" href="https://vk.ru/avtoserviss69" target="_blank" rel="noopener noreferrer">
+            <span class="mono">[VK]</span> ВКонтакте
           </a>
         </div>
       </div>
@@ -543,12 +585,19 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div>
+      <div class="footer__block">
         <span class="brand__mark brand__mark--sm">А69</span>
         <span class="mono muted">© АВТОМАСТЕР69 · РЖЕВ · С&nbsp;2019</span>
       </div>
+      <div class="footer__contacts mono">
+        <a href="tel:+79806417747">+7 (980) 641-77-47</a>
+        <a href="https://vk.ru/avtoserviss69" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+        <span class="footer__addr muted">Тверская обл., Ржев, ул.&nbsp;Соколова, 56А</span>
+      </div>
       <div class="footer__meta mono muted">
         <span>ЧЕСТНО · ПО&nbsp;ДЕЛУ · С&nbsp;ГАРАНТИЕЙ</span>
+        <a href="privacy.html" class="footer__legal">Политика конфиденциальности</a>
+        <a href="offer.html" class="footer__legal">Публичная оферта</a>
       </div>
     </div>
   </footer>
